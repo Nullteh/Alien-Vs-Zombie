@@ -76,6 +76,8 @@ void Game::display() const
         cout << "|" << endl;
     }
 
+    //lower border
+    cout << "  ";
     
 }
 
