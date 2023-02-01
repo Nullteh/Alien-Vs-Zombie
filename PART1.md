@@ -8,44 +8,40 @@ Please provide the YouTube link to your [Video Demo](https://youtube.com).
 
 ### Completed
 
-List all the features completed.
-
-1. Cool Feature #1
-2. Cool Feature #2
-3. *add more*
+1. Setting Change (Board Rows & Column, Zombie Amount)
+2. Game Board
 
 ### To Do
 
-List all the features not yet done. Remove this section if there is no incomplete requirements.
-
-1. Cool Feature #1
-2. *add more*
+1. Game Characters
+2. Attributes
+3. Movement and Attacks
+4. Game Objects
+5. Game Controls
+6. Saving and Loading Game Files
+7. Game Flow
+8. Making sure user input is using odd numbers for the Board Settings.
+9. Making sure program doesn't crash if user entered invalid input
 
 ## Additional Features
 
-Describe the additional features that has been implemented.
+WIP
 
 ## Contributions
 
-List down the contribution of each group members.
+### Loo Chuan Ming
 
-For example:
+1. Debugging other members code
 
-### Tony Stark
+### Ahmad Fathi bin Amir
 
-1. Randomly generate game board.
-2. *add more*
+1. Setting Change (Board Rows & Column, Zombie Amount)
 
-### Steve Rogers
+### Muhammad Syahmi bin Mohd Azmi
 
-1. Zombie movement and attack behaviour.
-2. *add more*
-
-### Dr. Strange
-
-1. Implement all game objects.
-2. *add more*
+1. Board Layout
+2. Zombies attributes
 
 ## Problems Encountered & Solutions
 
-Describe the problems encountered and provide the solutions / plan for the solutions.
+everything in this assignment

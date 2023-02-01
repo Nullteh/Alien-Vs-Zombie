@@ -18,4 +18,5 @@ void zombies::Status(int status)
     int zombiesHP[] = {100, 150} [rand()% zombiesHP];
     int zombiesDMG[] = {5, 10} [rand()% zombiesDMG];
     int zombiesRG[] = {1,2} [rand()% zombiesRG];
+
 }

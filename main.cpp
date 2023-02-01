@@ -53,9 +53,6 @@ void EvenCheck(int x) //Checks if the numbers are even (WIP)
 }
 
 
-// "::" is a scope resolution identifier
-// This basically allows you to define a method from outside a class scope
-// without making the code look clunky or making it too long
 void GameSettings::ChangeSettings() {
     char input;
     
@@ -117,28 +114,7 @@ int main()
     settings.ShowSettings();
     settings.ChangeSettings();
 
-
-    // To get values from Settings to be used in board game code, or in main() to be passed along
-    // Explanation, GetSettings() method requires 3 inputs to be passed along,
-    // ie. 3 variables RowNum, ColumnNum & ZombNum
-    // However, you can ONLY return ONE value from a method/function
-
-    // So in order to "return" values, you instead send the memory addresses of the aforementioned variables
-    // via the Address-of (&) Operator. This gives the memory address of the variable it is being used on
-    // Meaning, if you dereference that address via a Dereferencer (*) Operator, you can then access the
-    // proper values of the original variable that you used the (&) operator on
-
-    // eg. RowNum = 1 is a normal variable, you know how it works
-    // &RowNum gives the MEMORY ADDRESS of RowNum, but NOT the actual value that is contained within RowNum
-    // You store &RowNum's value into a pointer variable, eg. int *PtrRowNum
-    // (ptr = pointer, which is just arbitrary and used for better distinction)
-    // PtrRowNum = memory address, *PtrRowNum = value of RowNum
-    // Then using *PtrRowNum, you can now access RowNum's value
-    // Changing *PtRRowNum would also change RowNum's actual value. This is because *PtrRowNum is pointed to
-    // RowNum and therefore changes its values DIRECTLY. The opposite is also true from RowNum to *PtrRowNum
-
-    // Hence, passing the memory address of the three variables into the method will yield back values into the
-    // aforementioned variables due to using pointers. All without "returning" the values
+    // return the values from the pointer for the current settings
     settings.GetSettings(&RowNum, &ColumnNum, &ZombNum);
     cout << "\n\nRow Number: " << RowNum << "\nColumn Number: " << ColumnNum << "\nZombie Number: " << ZombNum;
 

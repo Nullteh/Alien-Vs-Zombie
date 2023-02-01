@@ -17,7 +17,7 @@ g++ main.cpp folder1\code.cpp folder2\code.cpp ......
 ```
 
 ## User Manual
-
+ (WIP)
 Please provide the user manual on how to use your program.
 
 Please DO NOT change the Progress Log below. Leave it as it is.
@@ -31,8 +31,8 @@ Please DO NOT change the Progress Log below. Leave it as it is.
 
 Please replace the following with your group members' names. 
 
-- Tony Stark
-- Steve Rogers
-- Dr. Strange
+- Loo Chuan Ming    
+- Ahmad Fathi bin Amir
+- Muhammad Syahmi bin Mohd Azmi
 
 
