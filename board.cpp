@@ -25,14 +25,13 @@ Game::Game(int axisX, int axisY)
     // menu(help);
 }
 
-//ERROR, FIX PLEASE
 void Game::init(int axisX, int axisY)
 {
     axisX_ = axisX;
     axisY_ = axisY;
 
-    char objects[] = {};    
-    int noOfObjects = {};
+    char objects[] = {' ',' ',' ','v','>','<','^','p','h','r'};    
+    int noOfObjects = {10};
 
     map_.resize(axisY_);
     for (int i = 0; i < axisY_; ++i)
@@ -54,7 +53,7 @@ void Game::display() const
 {
     cout << " --__--__--__--__--__--__- " << endl;
     cout << " = Aliens Vs. Zombies = "  << endl;
-    cout << " __--__--__--__--__--__--_ " << endl;
+    cout << " __--__--__--__--__--__--_ \n" << endl;
 
     // each row
     for (int i = 0; i < axisY_; ++i)
