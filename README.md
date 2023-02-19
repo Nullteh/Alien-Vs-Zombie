@@ -10,17 +10,22 @@ Please provide the YouTube link to your [Video Demo](https://youtube.com).
 
 Provide instructions on how to compile your program, especially when it is non-trivial.
 
-For example:
-
 ```
-g++ main.cpp folder1\code.cpp folder2\code.cpp ......
+g++ main.cpp board.cpp -o AnZ
 ```
+After compiling, do
+```
+./AnZ
+```
+to run it
 
 ## User Manual
  (WIP)
-Please provide the user manual on how to use your program.
+Upon Launching the game, you'll be greeted with a main menu,
 
-Please DO NOT change the Progress Log below. Leave it as it is.
+enter '1' to start the game.
+
+It will ask if you want to change the default settings.
 
 ## Progress Log
 
