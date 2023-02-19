@@ -8,52 +8,66 @@
 // Phones: 011-20784558 | 011-10691933 | 019-3808395
 // ********************************************************* 
 
-#include "pf/helper.h"
 #include <iostream>
+#include <cstdlib>
+#include "main.h"
 using namespace std;
 
-class GameSettings 
+int ClearScreen() // clear screen, taken from helper.cpp
 {
-    protected:
-        // Default settings
-        int BoardRws = 5; //Board Rows 
-        int BoardClmns = 9; //Board Columns
-        int ZombieAmnt = 1; // Zombie Amount
-
-    public:
-         // Only shows current settings and nothing else
-        void ShowSettings() {
-            cout << "Default Game Settings" << endl
-                 << "---------------------" << endl
-                 << "Board Rows     : " << BoardRws << endl
-                 << "Board Columns  : " << BoardClmns << endl
-                 << "Zombie Count   : " << ZombieAmnt << "\n" <<  endl;
-        }
-
-        // Call this method to change settings
-        void ChangeSettings();
-
-        // Pass along 3 memory addresses to get values through pointers 
-        void GetSettings(int *RowNum, int *ColumnNum, int *ZombNum) {
-            *RowNum = BoardRws;
-            *ColumnNum = BoardClmns;
-            *ZombNum = ZombieAmnt;
-        }
-};
-
-void EvenCheck(int x) //Checks if the numbers are even (WIP)
-{
-    int y = x;
-
-    if (y % 2 == 0)
-    cout << "Even Numbers are Not Accepted.\n Please Use Odd Numbers Instead.";
-
-    else
-    cin >> x;
+    #if defined(_WIN32)
+        return std::system("cls");
+    #elif defined(__linux__) || defined(__APPLE__)
+        return std::system("clear");
+    #endif
 }
 
+int Pause()
+{
+    #if defined(_WIN32)
+        return std::system("pause");
+    #elif defined(__linux__) || defined(__APPLE__)
+        return std::system(R"(read -p "Press any key to continue . . . " dummy)");
+    #endif
+}
 
-void GameSettings::ChangeSettings() {
+int SetValidNum()
+{
+    
+    int NumBuffer;
+    do
+    {
+        cin >> NumBuffer;
+        if (NumBuffer <= 0 || NumBuffer % 2 == 0)
+        {
+            cout << "Invalid Input, Please insert positive odd number. Not negative or even number." << endl;
+        }
+
+    }
+    while (NumBuffer <= 0 || NumBuffer % 2 ==0);
+
+    return NumBuffer;
+}
+
+int ZombieValidNum()
+{
+    int NumBuffer;
+    do
+    {
+        cin >> NumBuffer;
+        if (NumBuffer < 1 || NumBuffer > 9)
+        {
+            cout << "Invalid Input, Please insert between the value of 1 to 9. With 9 being the maximum zombies" << endl;
+        }
+    } 
+    while (NumBuffer < 1 || NumBuffer > 9);
+
+    return NumBuffer;
+    
+}
+
+void GameSettings::ChangeSettings() 
+{
     char input;
     
     //recursion
@@ -62,33 +76,35 @@ void GameSettings::ChangeSettings() {
 
     switch(input) {
         case 'y' : // player wants to change the settings
-            system("CLS");
-           
+            // add code where it clear the screen
             cout << "Board Settings" << endl
-                << "--------------" << endl;
+                 << "--------------" << endl;
 
             // Both Rows and Columns MUST be ODD-numbered due to requirements
             // Have a code to only accept non-negative odd numbers for both inputs
             // ALSO, each one of these inputs need to have a check for only accepting non-negative numbers and no other chars
             // (WIP)
             cout << "Enter Rows => "; 
-            cin >> BoardRws;
+            BoardRws = SetValidNum(); 
+            cout << endl;
 
             cout << "Enter Columns => ";
-            cin >> BoardClmns;
+            BoardClmns = SetValidNum();
             cout << endl;
         
             cout << "Zombie Settings" << endl
                 << "---------------" << endl;
 
             cout << "Enter Number of Zombies => ";
-            cin >> ZombieAmnt;
+            ZombieAmnt = ZombieValidNum();
 
-            cout << "\n" << "Settings Updated" << endl 
-                << "Press any key to continue .   .   ."; // Add stop + input to let user continue
+            cout << "\n" << "Settings Updated" << endl;
+            Pause();
+            ClearScreen();
             break;
 
         case 'n' : // Player continues with default settings
+        // add code where it clears the screen
             break;
 
         default: // Wrong user input
@@ -100,25 +116,29 @@ void GameSettings::ChangeSettings() {
     }
 }
 
-
 int main()
 {
-    // Variables stored in main
-    int RowNum, ColumnNum, ZombNum;
+    cout << "-------------------" << endl
+         << "| Alien VS Zombie |" << endl
+         << "-------------------" << endl;
 
-    cout << "Assignment (Part 1)" << endl;
-    cout << "Let's Get Started!" << endl << endl;
-    
-    GameSettings settings;
-    // The two methods below need to be called from a menu function/class
-    settings.ShowSettings();
-    settings.ChangeSettings();
+    cout << "1. Play";
+    cout << endl << "2. Quit\n" << endl;
+        
+    cout << "type in the number corresponding to the menu" << endl;
+    cout << "Input: ";
+    char MenuInput;
+    cin >> MenuInput;
 
-    // return the values from the pointer for the current settings
-    settings.GetSettings(&RowNum, &ColumnNum, &ZombNum);
-    cout << "\n\nRow Number: " << RowNum << "\nColumn Number: " << ColumnNum << "\nZombie Number: " << ZombNum;
+    switch (MenuInput)
+    {
+        case '1':
+            ClearScreen();
+            board();
 
-
-    // INSERT BOARD GAME CODE
-    //pf::Pause();
+        case '2':
+            exit(0);
+    }
+     
+        
 }

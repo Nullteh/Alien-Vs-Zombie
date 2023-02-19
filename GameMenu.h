@@ -1,17 +1,18 @@
 #include <iostream>
 using namespace std;
 
-int main()
+void ShowCommands()
 {
-    int ShowCommands;
-    cout << "Commands: " << endl;
-    cout << "up - move up" << endl;
-    cout << "down - move down" << endl;
-    cout << "left - move left" << endl;
-    cout << "right - move right" << endl;
-    cout << "arrow - switch the direction of an arrow in the board" << endl;
-    cout << "help - list the commands" << endl;
-    cout << "save - save the current game" << endl;
-    cout << "load - load a save game" << endl;
-    cout << "quit - quits the game" << endl;
+    cout << "+------------------------------------------------------+" << endl
+         << "|Commands:                                             |" << endl
+         << "| up - move up                                         |" << endl
+         << "| down - move down                                     |" << endl
+         << "| left - move left                                     |" << endl
+         << "| right - move right                                   |" << endl
+         << "| arrow - switch the direction of an arrow in the board|" << endl
+         << "| help - list the commands                             |" << endl
+         << "| save - save the current game                         |" << endl
+         << "| load - load a save game                              |" << endl
+         << "| quit - quits the game                                |" << endl
+         << "+------------------------------------------------------+" << endl;
 }

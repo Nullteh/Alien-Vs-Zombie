@@ -2,7 +2,7 @@
 
 ## Video Demo
 
-Please provide the YouTube link to your [Video Demo](https://youtube.com).
+N/A
 
 ## Minimum Requirements
 
@@ -10,41 +10,47 @@ Please provide the YouTube link to your [Video Demo](https://youtube.com).
 
 List all the features completed.
 
-1. Cool Feature #1
-2. Cool Feature #2
-3. *add more*
+Setting Change (Board Rows & Column, Zombie Amount)
+Game Board
+Movement 
+Game Objects (Partially)
+Game Controls
+Making sure user input is using odd numbers for the Board Settings.
 
 ### To Do
-
-List all the features not yet done. Remove this section if there is no incomplete requirements.
-
-1. Cool Feature #1
-2. *add more*
+Saving and Loading Game Files
+Game Flow
+Game Objects
+Attributes
+Game Characters
+Attacks
 
 ## Additional Features
 
-Describe the additional features that has been implemented.
+N/A
 
 ## Contributions
 
 List down the contribution of each group members.
 
-For example:
 
-### Tony Stark
+### Ahmad Fathi bin Amir
+
+2. Setting Change (Board Rows & Column, Zombie Amount)
+3. Movement for Alien 
+4. Menu Option;
+
+### Muhammad Syahmi bin Mohd Azmi
 
 1. Randomly generate game board.
-2. *add more*
+2. Zombie movement and attack behaviour.
+3. Game Flow
 
-### Steve Rogers
-
-1. Zombie movement and attack behaviour.
-2. *add more*
-
-### Dr. Strange
+### Loo Chuan Ming
 
 1. Implement all game objects.
-2. *add more*
+2. Attributes
+3. Game Characters
 
 ## Problems Encountered & Solutions
 
